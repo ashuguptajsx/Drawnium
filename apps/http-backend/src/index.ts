@@ -5,6 +5,7 @@ import { middleware } from "./middleware";
 import { CreateUserSchema, SigninSchema, CreateRoomSchema } from "@repo/common/types";
 import { prismaClient } from "@repo/db";
 
+
 const app = express();
 
 
@@ -17,6 +18,7 @@ app.post("/signup",(req,res) =>{
         return;
     }
 })
+
 
 app.post("/signin",(req,res) =>{
     const data = SigninSchema.safeParse(req.body);
@@ -31,6 +33,7 @@ app.post("/signin",(req,res) =>{
 
     res.json({token});
 })
+
 
 app.post("/room",middleware,(req,res) =>{
     const data = CreateRoomSchema.safeParse(req.body);
