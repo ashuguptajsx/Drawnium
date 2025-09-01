@@ -21,9 +21,9 @@ export function middleware(req: Request, res: Response, next: NextFunction) {
        req.userId = decoded.userId;
        next()
      } else {
-       res.status(403).json({message:"unauthorized"})
+       res.status(403).json({message:" not authorized"})
      }
    } catch (error) {
-     res.status(403).json({message:"unauthorized"})
+     res.status(403).json({message:"not authorized "})
    }
 }   
