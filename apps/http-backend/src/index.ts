@@ -13,11 +13,12 @@ app.post("/signup",(req,res) =>{
     const data = CreateUserSchema.safeParse(req.body);
     if(!data.success){
          res.json({
-            message : "Incorrect data"
+            message : "Incorrect data is entered"
         })
         return;
     }
 })
+
 
 
 app.post("/signin",(req,res) =>{
