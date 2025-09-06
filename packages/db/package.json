@@ -1,15 +1,17 @@
 {
   "name": "@repo/db",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./dist/index.js"
   },
   "scripts": {
+    "build": "tsc && node -e \"require('fs').cpSync('src/generated', 'dist/generated', {recursive: true})\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*"
+    "@repo/typescript-config": "workspace:*",
+    "typescript": "^5.0.0"
   },
   "keywords": [],
   "author": "",
